@@ -1,0 +1,77 @@
+.bento-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-auto-rows: 280px;
+  gap: 1.5rem;
+}
+
+/* Make some items span differently for the "bento" feel if we wanted, 
+   but for dynamic lists a uniform grid is usually better. 
+   We will rely on the auto-fit for this version to ensure all cards fit well */
+
+.bento-item {
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+}
+
+.add-site-card {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  background: rgba(20, 20, 25, 0.2);
+}
+
+.add-site-card:hover {
+  background: rgba(45, 212, 191, 0.1);
+  border-color: rgba(45, 212, 191, 0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 20px rgba(45, 212, 191, 0.2);
+}
+
+.add-site-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-wrapper {
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.add-site-card:hover .icon-wrapper {
+  background: rgba(45, 212, 191, 0.2);
+  transform: scale(1.1);
+}
+
+.add-site-content h3 {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+}
+
+.add-site-card:hover .add-site-content h3 {
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 250px;
+  }
+}
