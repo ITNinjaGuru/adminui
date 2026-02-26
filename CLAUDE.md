@@ -40,3 +40,11 @@ React 19 SPA built with Vite 7 (JSX, no TypeScript). The app is a **Master Admin
 
 - `lucide-react` for icons (tree-shakeable, import individual icons)
 - Screenshot thumbnails via `https://image.thum.io/get/width/800/crop/800/{url}` (no API key required)
+
+## Deployment (Railway)
+
+- Configured via `railway.toml` — Nixpacks builder, Node >=22.0.0
+- Production server: `serve` package serves static `dist/` on Railway's dynamic `$PORT`
+- No environment variables required
+- Health check on `/`
+- If a client-side router is added later, create `serve.json` with a catch-all rewrite to `/index.html`
